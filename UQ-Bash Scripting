@@ -1,0 +1,172 @@
+Q. How to run script in debug mode?
+A. There are many ways to run a script in debug mode:
+  1. Use the command  set-x in the bash script
+#! /bin/bash
+#
+# SCRIPT: Basic Script
+# AUTHOR: Vidushi Bansal
+# DATE:   31/08/2020
+# REV:    1.1.A (Valid are A, B, D, T and P)
+#          (For Alpha, Beta, Dev, Test and Production)
+#
+#
+# PLATFORM: Linux Debian
+#
+# PURPOSE: To debug a script and use of set +x command.
+# REV LIST:
+#    DATE        : Date of revision
+#    BY          : AUTHOR OF MODIFICATION
+#    MODIFICATION: Describe the chages made. What do they enhance.
+#
+ set -n   # Uncomment to check script syntax, without execution.
+#          # NOTE: Do forget comment it back as it won't allow the
+#          # the script to execute.
+#
+ set +x   # Uncomment this for debugging this shell script.
+#
+#
+################################################################
+#          Define Files and Variables here                     #
+var1="Hello"
+################################################################
+################################################################
+#          Define Functions here                               #
+################################################################
+################################################################
+#          Beginning of Main                                   #
+echo "My variable is $var1"
+################################################################
+# End of script
+
+  
+  2. Use the command bash -x <script-name>
+        + echo -n 'Enter a number'
+        Enter a number+ read n
+        12
+        + [[ 12 -gt 10 ]]
+        + echo 'It is greater than 10'
+        It is greater than 10
+
+
+3. Including #!/bin/bash -xv as shebang.
+  #! /bin/bash -xv
+#
+# SCRIPT: Debug a bash
+# AUTHOR: Vidushi Bansal
+# DATE:   31/08/2020
+# REV:    1.1.A (Valid are A, B, D, T and P)
+#          (For Alpha, Beta, Dev, Test and Production)
+#
+#
+# PLATFORM: Linux
+# 
+# PURPOSE: To debug a bash script by using a -xv command along with the shebang
+# REV LIST:
+#    DATE        : Date of revision
+#    BY          : AUTHOR OF MODIFICATION
+#    MODIFICATION: Describe the chages made. What do they enhance.
+# 
+# set -n   # Uncomment to check script syntax, without execution.
+#          # NOTE: Do forget comment it back as it won't allow the 
+#          # the script to execute.
+#
+# set +x   # Uncomment this for debugging this shell script.
+#
+#
+################################################################
+#          Define Files and Variables here                     #
+var1="Linux"
+var2="linux"
+################################################################
+################################################################
+#          Define Functions here                               #
+################################################################
+################################################################
+#          Beginning of Main                                   #
+if [ "$var1" == "$var2" ]
+then
+	echo They are equal
+else
+	echo They are not equal
+fi
+################################################################
+# End of script
+
+
+
+Q2. What is the script to check the available memory in the system?
+A2. #! /bin/bash
+#
+# SCRIPT: Check the available memory in the system
+# AUTHOR: Vidushi Bansal
+# DATE:   31/08/2020
+# REV:    1.1.A (Valid are A, B, D, T and P)
+#          (For Alpha, Beta, Dev, Test and Production)
+#
+#
+# PLATFORM: Linux
+# 
+# PURPOSE: To check the memory available in the system
+# REV LIST:
+#    DATE        : Date of revision
+#    BY          : AUTHOR OF MODIFICATION
+#    MODIFICATION: Describe the chages made. What do they enhance.
+# 
+# set -n   # Uncomment to check script syntax, without execution.
+#          # NOTE: Do forget comment it back as it won't allow the 
+#          # the script to execute.
+#
+# set +x   # Uncomment this for debugging this shell script.
+#
+#
+################################################################
+#          Define Files and Variables here                     #
+################################################################
+################################################################
+#          Define Functions here                               #
+################################################################
+################################################################
+#          Beginning of Main                                   #
+free -m
+################################################################
+# End of script
+
+
+Q3. What are the methods to print a sequence of number
+A3. These are the following methods:
+    1. Using sequence in for loop
+    
+        #!/bin/bash
+        a=10
+        for i in `seq 1 $a`;
+        do
+                echo $i
+        done   
+        
+     2. Using the format for (( )) 
+     #!/bin/bash
+
+      a=10
+      for (( i=1; i<=$a; i++ )) 
+       	do
+            echo $i
+        done
+    
+    3. Using a while loop
+    #!/bin/bash
+    a=10
+    i=1
+    while [[ $i -le $a ]]
+      do
+        echo "$i"
+        let i+=1
+      done
+    
+    4.
+      #!/bin/bash
+      a=10
+      i=1
+      for i in $(eval echo "{1..$a}")
+        do
+          echo $i
+        done
