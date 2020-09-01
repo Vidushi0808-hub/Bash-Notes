@@ -1,0 +1,32 @@
+Q1. How to call a particular function from command line?
+A1. Considering the following script:
+      #!/bin/bash
+      fun(){
+	      echo "Hello"
+      }
+      fun1(){
+	      echo "World"
+      }
+      "$@"
+      
+      Use the command:
+      ./<script-name> <function-name>
+      ./call-fun.sh fun1
+      
+Q2. What is the need of three different redirection streams?
+A2. STDIN is a standard input stream which accepts text as input. Text output from the command to the shell is delivered via an output stream STDOUT. Error messages from the command are send through the STDERR.
+    Normal output and the error messages have their own conduit to carry them to the terminal window and so they can be handled independently.
+
+Q3. Where is the default interpreter stored and how can we change it?
+A3. chsh command is used to check the default interpreter
+  chsh -s /bin/dash changes the interpreter to dash
+    
+Q4. What are the return value status?
+A4. Every Linux command executed by the shell script or user, has an exit status.
+    The Linux man pages stats the exit statuses of each command
+    0 exit status means the command was successful without any errors.
+    A non-zero (1-255 values) exit status means command was failure.
+    You can use special shell variable called $? to get the exit status of the previously executed command. 
+    According to ls man page - exit status is 0 if OK, 1 if minor problems, 2 if serious trouble.
+
+      
