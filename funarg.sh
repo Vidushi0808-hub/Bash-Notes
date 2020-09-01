@@ -7,9 +7,9 @@
 #          (For Alpha, Beta, Dev, Test and Production)
 #
 #
-# PLATFORM: Passing arguments to a function
+# PLATFORM: UBUNTU
 #
-# PURPOSE: A clear, even if required lenghty, use-case.
+# PURPOSE: Passing arguments to a function
 # REV LIST:
 #    DATE        : Date of revision
 #    BY          : AUTHOR OF MODIFICATION
