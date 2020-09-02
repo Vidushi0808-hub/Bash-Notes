@@ -28,6 +28,9 @@
 a=" This is what it is "
 b="Hello,world"
 c="The rain in spain stays mainly in the plain"
+age=21
+info="My name is Vidushi, and my age is {}"
+
 ################################################################
 #          Define Functions here                               #
 ################################################################
@@ -47,5 +50,7 @@ print(c)
 #Checking whether the substring is present on the string or not#
 x="ain" in c
 print(x) #It prints a boolean value#
+#Use format to combine a string and an integer#
+print(info.format(age))
 ################################################################
 # End of script                                                #
